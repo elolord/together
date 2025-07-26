@@ -91,7 +91,7 @@ function Next() {
 function Rise() {
     let timer2 = null,
         distance = 0;
-    const target = 120,
+    const target = 80,
         speed = 1;
 
     let love_top = parseFloat(window.getComputedStyle(love, null).top.slice(0, -2));
@@ -141,6 +141,6 @@ window.onload = function () {
     setTimeout(() => {
         timer = setInterval(() => {
             Next();
-        }, 300);
-    }, 12000);
+        }, 150);
+    }, 6000);
 };
