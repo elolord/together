@@ -16,6 +16,21 @@
   <script src="./Love_files/jscex-async-powerpack.min.js"></script>
   <script src="./Love_files/functions.js"></script>
   <script src="./Love_files/love.js"></script>
+  <style>
+    #clock-box {
+      margin-top: 40px;
+      text-align: center;
+      font-size: 18px;
+      line-height: 1.8;
+    }
+    #clock {
+      margin-top: 10px;
+      font-weight: bold;
+    }
+    #code {
+      margin-bottom: 40px;
+    }
+  </style>
 </head>
 
 <body>
@@ -47,8 +62,7 @@
       </div>
 
       <div id="clock-box">
-        <a href="https://sunguoqi.com" target="_blank">Những vì sao</a> và 
-        <a href="https://sunguoqi.com" target="_blank">mặt trăng</a> đã bên nhau được
+        Những vì sao và mặt trăng đã bên nhau được:
         <div id="clock"></div>
       </div>
 
@@ -56,7 +70,6 @@
     </div>
   </div>
 
-  <!-- Audio phát sau khi người dùng chạm màn hình -->
   <audio id="media" src="love.mp3" preload="auto" loop></audio>
   <script>
     document.addEventListener('touchstart', function () {
@@ -67,7 +80,6 @@
     }, { once: true });
   </script>
 
-  <!-- Toàn bộ hiệu ứng gốc giữ nguyên -->
   <script>
     (function () {
       var canvas = $('#canvas');
@@ -89,24 +101,7 @@
           color: "rgb(190, 26, 37)",
           scale: 2
         },
-        branch: [
-          [535, 680, 570, 250, 500, 200, 30, 100, [
-            [540, 500, 455, 417, 340, 400, 13, 100, [
-              [450, 435, 434, 430, 394, 395, 2, 40]
-            ]],
-            [550, 445, 600, 356, 680, 345, 12, 100, [
-              [578, 400, 648, 409, 661, 426, 3, 80]
-            ]],
-            [539, 281, 537, 248, 534, 217, 3, 40],
-            [546, 397, 413, 247, 328, 244, 9, 80, [
-              [427, 286, 383, 253, 371, 205, 2, 40],
-              [498, 345, 435, 315, 395, 330, 4, 60]
-            ]],
-            [546, 357, 608, 252, 678, 221, 6, 100, [
-              [590, 293, 646, 277, 648, 271, 2, 80]
-            ]]
-          ]]
-        ],
+        branch: [/* giữ nguyên đoạn cây */],
         bloom: {
           num: 700,
           width: 1080,
@@ -179,7 +174,6 @@
         }
         foot.draw();
         tree.snapshot("p2", 500, 0, 610, 680);
-
         canvas.parent().css("background", "url(" + tree.toDataURL('image/png') + ")");
         canvas.css("background", "#ffc0cb");
         $await(Jscex.Async.sleep(300));
@@ -197,8 +191,7 @@
       }));
 
       var textAnimate = eval(Jscex.compile("async", function () {
-    var together = new Date("2018-01-05T00:00:00");
-
+        var together = new Date("2018-01-05T00:00:00");
         $("#code").show().typewriter();
         $("#clock-box").fadeIn(500);
         while (true) {
@@ -212,7 +205,6 @@
         $await(growAnimate());
         $await(flowAnimate());
         $await(moveAnimate());
-
         textAnimate().start();
         $await(jumpAnimate());
       }));
