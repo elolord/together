@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Dear Sun</title>
+  <link rel="stylesheet" href="css/love.css" />
+  <style>
+    #startButton {
+      position: fixed;
+      top: 0; left: 0;
+      width: 100vw;
+      height: 100vh;
+      background: white;
+      z-index: 9999;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-size: 24px;
+      font-family: sans-serif;
+    }
+  </style>
+</head>
+<body>
+  <div id="startButton">Nhấn để bắt đầu 💖</div>
+
+  <audio id="audios" loop preload="auto">
+    <source src="MP3/1.mp3" />
+  </audio>
+
+  <div class="container" onselectstart="return false;" unselectable="on" style="-moz-user-select:none;">
+    <div class="body_left">
+      <img src="images/biubiubiu.gif" alt="" ondragstart="return false;" />
+      <!-- Đồng hồ & chữ -->
+      <div id="countup-wrapper">
+        <div id="countup-label">Đã bám nhau được:</div>
+        <div id="countup-timer-text"></div>
+      </div>
+    </div>
+    <div class="body_center love">
+      <div class="block">
+        <div class="div1"></div>
+        <div class="div2"></div>
+        <div class="div3"></div>
+        <div class="div4"></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="footer">
+    <div class="border">
+      <div class="border-top"></div>
+      <div class="border-bottom"></div>
+    </div>
+  </div>
+
+  <script src="js/love.js"></script>
+  <script>
+    const btn = document.getElementById('startButton');
+    const audio = document.getElementById('audios');
+    
+    btn.addEventListener('click', async () => {
+      try {
+        await audio.play();
+      } catch (e) {
+        console.log("Lỗi phát nhạc:", e);
+      }
+      btn.style.display = 'none';
+    });
+  </script>
+</body>
+</html>
