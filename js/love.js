@@ -141,6 +141,6 @@ window.onload = function () {
     setTimeout(() => {
         timer = setInterval(() => {
             Next();
-        }, 150);
-    }, 6000);
+        }, 200);
+    }, 12000);
 };
