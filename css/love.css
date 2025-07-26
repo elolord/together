@@ -96,7 +96,7 @@ body {
 .footer .border .border-top {
   border-top: 3px solid black;
   transform-origin: left center;
-  animation: border 12s linear forwards;
+  animation: border 8s linear forwards; /* 👈 tăng tốc: từ 12s → 8s */
   width: 100%;
 }
 
@@ -106,9 +106,10 @@ body {
   top: 3px;
   border-top: 3px solid red;
   transform-origin: right center;
-  animation: border 7s linear 12s forwards;
-  width: 50%;
+  animation: border 6s linear 8s forwards; /* 👈 delay trùng 8s */
+  width: 100%;
 }
+
 
 @keyframes border {
   0% { width: 0; }
